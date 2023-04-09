@@ -1,0 +1,55 @@
+// https://colorhunt.co/palette/5f71616d8b74efead8d0c9c0
+@use "sass:map";
+@import '../node_modules/bootstrap/scss/functions';
+$primary: #6D8B74;
+$secondary: #6D8B74;
+$tertiary: #D0C9C0;
+$light: #EFEAD8;
+
+$border-width: 3px;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+header #header-name {
+    font-size: 4rem;
+
+}
+
+.portfolio-item {
+    transition: box-shadow 0.3s ease;
+
+}
+
+.portfolio-item:hover {
+    box-shadow: 5px 5px 0 $secondary;
+
+}
+
+/* CONTACT */
+
+.form-control {
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+#contact button {
+    height: 70px;
+
+}
+
+//img {
+//   transition: transform 0.2s ease-in-out;
+//}
+//
+//img:hover {
+//   transform: scale(101%); 
+//}
