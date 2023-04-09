@@ -1,6 +1,6 @@
 import '../node_modules/bootstrap/dist/js/bootstrap.js';
 import './main.scss';
-import AOS from 'aos';
+import AOS from 'aos/dist/aos.js';
 import 'aos/dist/aos.css';
 //import './styles.css';
 import jsTypeText from 'js-type-text';
