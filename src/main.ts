@@ -18,7 +18,7 @@ AOS.init({
 
 
 jsTypeText.start({
-    text: "Web Designer - Freelancer - Graphic Desinger",
+    text: "Web Designer - Freelancer - Graphic Designer",
     speed: 110,
     cursor: false
 }, (result: string) => {

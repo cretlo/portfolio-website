@@ -22,14 +22,14 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="3.0142857"
-     inkscape:cx="65.35545"
-     inkscape:cy="140.16588"
-     inkscape:window-width="1846"
-     inkscape:window-height="1016"
-     inkscape:window-x="1994"
-     inkscape:window-y="27"
+     inkscape:cx="65.355451"
+     inkscape:cy="140.33175"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Circle" />
+     inkscape:current-layer="Color/Palette/Blue-01" />
   <desc
      id="desc2">Created with getavataaars.com</desc>
   <defs
@@ -85,7 +85,7 @@
                y="0"
                width="240"
                height="240"
-               style="fill:#2c3e50;fill-opacity:1" />
+               style="fill:#353535;fill-opacity:1" />
           </g>
         </g>
         <mask
