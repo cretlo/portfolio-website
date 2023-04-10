@@ -16,7 +16,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "aos": "^2.3.4",
+    "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.2.3",
     "js-type-text": "^2.0.6"
   }
