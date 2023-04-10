@@ -45,6 +45,7 @@
                 <!-- Masthead Subheading-->
                 <p class="font-weight-light mb-4 lead invisible text-gen">Graphic Artist - Web Designer - Illustrator</p>
             </div>
+            <i class="fas fa-chevron-down"></i>
         </header>
 
         <!-- Portfolio Section-->
@@ -105,32 +106,40 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center" data-aos="fade" data-aos-offset="300">
                     <div class="col-lg-8 col-xl-7">
-                        <form>
+                        <form name="contact" methods="POST" data-netlify="true">
+                            <!-- Honeypot field -->
+                            <div class="invisible position-absolute mx-0 my-0 py-0 px-0">
+                                <input class="form-control py-0 m-0" id="name" type="text" placeholder="Enter your name..." name="bot-field"/>
+                                <label for="name">Don't fill this input field out if you're human</label>
+                            </div>
+
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..."/>
+                                <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..."/>
                                 <label for="name">Full Name</label>
                                 <div class="invalid-feedback">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" />
+                                <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" />
                                 <label for="email">Email Address</label>
                                 <div class="invalid-feedback">An email is required.</div>
                                 <div class="invalid-feedback">Email is not valid.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(555) 456-7890" />
+                                <input class="form-control" id="phone" type="tel" name="phone" placeholder="(555) 456-7890" />
                                 <label for="phone">Phone Number</label>
                                 <div class="invalid-feedback">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" ></textarea>
+                                <textarea class="form-control" id="message" type="text" name="message" placeholder="Enter your message here..." style="height: 10rem" ></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback">A message is required.</div>
                             </div>
+                            <!-- Recaptcha -->
+                            <div data-netlify-recaptcha="true"></div>
                             <!-- Submit Button-->
                             <div class="form-group d-flex justify-content-center">
                                 <button class="w-100 btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>

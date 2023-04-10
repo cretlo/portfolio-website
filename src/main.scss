@@ -1,5 +1,4 @@
 // https://colorhunt.co/palette/5f71616d8b74efead8d0c9c0
-@use "sass:map";
 @import '../node_modules/bootstrap/scss/functions';
 $primary: #6D8B74;
 $secondary: #6D8B74;
@@ -13,6 +12,11 @@ $border-width: 3px;
 header #header-name {
     font-size: 4rem;
 
+}
+
+header .fas {
+    font-size: 7rem;
+    //filter: drop-shadow(3px 3px 0 $light);
 }
 
 .portfolio-item {
