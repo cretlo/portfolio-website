@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import projectsData from "../data/projects.json";
+
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+export function getStaticPaths() {
+    return projectsData;
+}
+
+const { project } = Astro.params;
+const { title, desc, technologies, about, link, github } = Astro.props;
+
+// Map used for lookup of specific page ImageMetadata to render in astro Image component
+const imgMap = new Map<string, ImageMetadata>();
+projectsData.forEach(async (data) => {
+    const key = data.params.project as string;
+    const imgData = import(data.props.imgPath) as unknown;
+
+    imgMap.set(key, imgData as ImageMetadata);
+});
+---
+
+<Layout title={project}>
+    <div class="py-4">
+        <div class="mb-4">
+            <a href="/#projects" transition:name="#projects"
+                >← Back to Project</a
+            >
+        </div>
+        <h1 class="text-2xl font-bold mb-4">{title}</h1>
+        <Image src={imgMap.get(project) as ImageMetadata} alt={desc} />
+        <div>
+            <p>
+                Technologies:
+                {
+                    technologies.map((tech) => {
+                        return <span>{tech}</span>;
+                    })
+                }
+            </p>
+            <p>Links: {link} {github}</p>
+            <p>About: {about}</p>
+        </div>
+    </div>
+</Layout>
