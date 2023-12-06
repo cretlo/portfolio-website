@@ -1,16 +1,6 @@
 ---
-import type { ImageMetadata } from "astro";
 import ProjectCard from "./ProjectCard.astro";
 import projectsData from "../data/projects.ts";
-
-const imgMap = new Map<string, ImageMetadata>();
-
-projectsData.forEach(async (data) => {
-    const key = data.params.project as string;
-    const imgData = import(data.props.imgPath) as unknown;
-
-    imgMap.set(key, imgData as ImageMetadata);
-});
 ---
 
 <section id="projects">
@@ -20,13 +10,7 @@ projectsData.forEach(async (data) => {
             projectsData.map((data) => {
                 const { project } = data.params;
 
-                return (
-                    <ProjectCard
-                        {...data.props}
-                        link={project}
-                        imgData={imgMap.get(project)}
-                    />
-                );
+                return <ProjectCard {...data.props} link={project} />;
             })
         }
     </div>

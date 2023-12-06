@@ -31,10 +31,11 @@ import {
     SiBootstrap,
     SiUnity,
     SiBlender,
+    SiGithub,
 } from "react-icons/si";
 
 import { PiFileSqlFill } from "react-icons/pi";
-import { FaJava } from "react-icons/fa";
+import { DiJava } from "react-icons/di";
 
 const iconMap = {
     javascript: SiJavascript,
@@ -47,7 +48,7 @@ const iconMap = {
     csharp: SiCsharp,
     lua: SiLua,
     c: SiC,
-    java: FaJava,
+    java: DiJava,
     haskell: SiHaskell,
     nginx: SiNginx,
     docker: SiDocker,
@@ -71,6 +72,7 @@ const iconMap = {
     bootstrap: SiBootstrap,
     unity: SiUnity,
     blender: SiBlender,
+    github: SiGithub,
 };
 
 export default function Icon({ title, size = 48 }) {
