@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import type { IconType } from "react-icons";
+import Icon from "../components/Icon";
 
 import { SiBootstrap } from "react-icons/si";
 
@@ -31,7 +32,7 @@ projectsData.forEach(async (data) => {
     <div class="py-4">
         <div class="mb-4">
             <a
-                class="px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors ease-in"
+                class="px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
                 href="/#projects"
                 transition:name="#projects">← Back to Projects</a
             >
@@ -48,6 +49,8 @@ projectsData.forEach(async (data) => {
         <div>
             <h2 class="text-lg font-semibold">Technologies</h2>
             <div class="flex gap-6 py-4">
+                {technologies.map((tech) => <Icon title={tech} />)}
+                <!--
                 {
                     technologies.map((Icon: IconType) => (
                         <Icon
@@ -57,19 +60,20 @@ projectsData.forEach(async (data) => {
                         />
                     ))
                 }
+                -->
             </div>
             <h2 class="text-lg font-semibold">Links</h2>
             <div class="py-4">
                 <a
                     href={link}
                     target="_blank"
-                    class="px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors ease-in"
+                    class="px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
                     >Website</a
                 >
                 <a
                     href={github}
                     target="_blank"
-                    class="px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors ease-in"
+                    class="px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
                     >Github</a
                 >
             </div>

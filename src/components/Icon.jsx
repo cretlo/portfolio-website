@@ -14,6 +14,7 @@ import {
     SiReact,
     SiNextdotjs,
     SiVite,
+    SiAstro,
     SiWebpack,
     SiNodedotjs,
     SiExpress,
@@ -25,6 +26,11 @@ import {
     SiArchlinux,
     SiTmux,
     SiGnubash,
+    SiStripe,
+    SiTailwindcss,
+    SiBootstrap,
+    SiUnity,
+    SiBlender,
 } from "react-icons/si";
 
 import { PiFileSqlFill } from "react-icons/pi";
@@ -48,6 +54,7 @@ const iconMap = {
     react: SiReact,
     nextjs: SiNextdotjs,
     vite: SiVite,
+    astro: SiAstro,
     webpack: SiWebpack,
     nodejs: SiNodedotjs,
     express: SiExpress,
@@ -59,6 +66,11 @@ const iconMap = {
     arch: SiArchlinux,
     tmux: SiTmux,
     bash: SiGnubash,
+    stripe: SiStripe,
+    tailwind: SiTailwindcss,
+    bootstrap: SiBootstrap,
+    unity: SiUnity,
+    blender: SiBlender,
 };
 
 export default function Icon({ title, size = 48 }) {
