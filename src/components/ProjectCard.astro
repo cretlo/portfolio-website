@@ -3,12 +3,15 @@ import { Image } from "astro:assets";
 const { title, desc, imgData, link } = Astro.props;
 ---
 
-<a href={link} class="block">
+<a href={link} class="block max-w-xs">
     <div
-        class="relative shadow-md border border-black hover:shadow-lg hover:shadow-teal-900 transition-shadow ease-in"
+        class="relative shadow-md border border-black hover:shadow-lg hover:shadow-slate-500 transition-shadow ease-in"
     >
-        <Image src={imgData} alt={desc} />
-        <p class="absolute top-0 left-0 bg-slate-400 p-2 shadow-black">
+        <Image src={imgData} alt={desc} transition:name="image" />
+        <p
+            transition:name="title"
+            class="absolute top-0 left-0 bg-slate-500 text-white p-2 shadow-black"
+        >
             {title}
         </p>
     </div>

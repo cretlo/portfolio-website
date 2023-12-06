@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import ProjectCard from "./ProjectCard.astro";
-import projectsData from "../data/projects.json";
+import projectsData from "../data/projects.ts";
 
 const imgMap = new Map<string, ImageMetadata>();
 
@@ -18,9 +18,9 @@ projectsData.forEach(async (data) => {
 //link={project}
 ---
 
-<section id="projects" class="mx-12">
+<section id="projects">
     <h2 class="text-center text-4xl font-semibold mb-4">Projects</h2>
-    <div class="flex flex-wrap gap-12">
+    <div class="flex flex-wrap gap-2 justify-center items-center">
         {
             projectsData.map((data) => {
                 const { project } = data.params;
