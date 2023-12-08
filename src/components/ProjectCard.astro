@@ -5,12 +5,17 @@ const { title, desc, imgData, link } = Astro.props;
 
 <a href={link} class="block max-w-xs">
     <div
-        class="relative shadow-md border border-black hover:shadow-lg hover:shadow-slate-500 transition-shadow ease-in"
+        class="relative overflow-hidden border border-black transition-all ease-in hover:shadow-lg hover:shadow-slate-500 [&>p]:hover:rounded-br-2xl"
     >
-        <Image src={imgData} alt={desc} transition:name="image" />
+        <Image
+            src={imgData}
+            alt={desc}
+            transition:name="image"
+            class="transition-all"
+        />
         <p
             transition:name="title"
-            class="absolute top-0 left-0 bg-slate-500 text-white p-2 shadow-black"
+            class="absolute left-0 top-0 bg-teal-700 p-2 text-white shadow-black transition-all"
         >
             {title}
         </p>

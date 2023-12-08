@@ -32,6 +32,7 @@ import {
     SiUnity,
     SiBlender,
     SiGithub,
+    SiGit,
 } from "react-icons/si";
 
 import { PiFileSqlFill } from "react-icons/pi";
@@ -73,12 +74,17 @@ const iconMap = {
     unity: SiUnity,
     blender: SiBlender,
     github: SiGithub,
+    git: SiGit,
 };
 
 export default function Icon({ title, size = 48 }) {
     const IconComponent = iconMap[title];
 
     return (
-        <IconComponent title={title} size={size} className="fill-slate-500" />
+        <IconComponent
+            title={title}
+            size={size}
+            className="fill-slate-500 hover:fill-teal-700"
+        />
     );
 }

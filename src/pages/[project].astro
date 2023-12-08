@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Icon from "../components/Icon";
 import Layout from "../layouts/Layout.astro";
 import projectsData from "../data/projects.ts";
+import Footer from "src/components/Footer.astro";
 
 export function getStaticPaths() {
     return projectsData;
@@ -12,61 +13,59 @@ const { title, desc, technologies, about, imgData, link, github } = Astro.props;
 ---
 
 <Layout title={title}>
-    <div class="py-4">
-        <div class="mb-4">
+    <div>
+        <div class="mb-8">
             <a
-                class="px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
+                class="border border-black px-4 py-2 transition-colors ease-in hover:bg-teal-700 hover:text-white"
                 href="/#projects"
                 transition:name="#projects">← Back to Projects</a
             >
         </div>
-        <h1 transition:name="title" class="text-2xl font-bold mb-4">
+        <h1 transition:name="title" class="mb-4 text-2xl font-bold">
             {title}
         </h1>
         <Image
             transition:name="image"
             src={imgData}
             alt={desc}
-            class="border border-black mb-4"
+            class="mb-4 border border-black"
         />
         <div>
-            <h2 class="text-lg font-semibold">Technologies</h2>
-            <div class="flex gap-6 py-4">
-                {technologies.map((tech) => <Icon title={tech} />)}
-                <!--
-                {
-                    technologies.map((Icon: IconType) => (
-                        <Icon
-                            className="fill-slate-500"
-                            title={Icon.name}
-                            size={48}
-                        />
-                    ))
-                }
-                -->
+            <div class="mb-6">
+                <h2 class="mb-4 text-lg font-semibold">Technologies</h2>
+                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                    {technologies.map((tech) => <Icon title={tech} />)}
+                </div>
             </div>
-            <h2 class="text-lg font-semibold">Links</h2>
-            <div class="py-4">
-                {
-                    link && (
-                        <a
-                            href={link}
-                            target="_blank"
-                            class="px-4 py-2 me-4 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
-                        >
-                            Website
-                        </a>
-                    )
-                }
-                <a
-                    href={github}
-                    target="_blank"
-                    class="px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition-colors ease-in"
-                    >Github</a
-                >
+
+            <div class="mb-8">
+                <h2 class="mb-4 text-lg font-semibold">Links</h2>
+                <div>
+                    {
+                        link && (
+                            <a
+                                href={link}
+                                target="_blank"
+                                class="me-4 border border-black px-4 py-2 transition-colors ease-in hover:bg-teal-700 hover:text-white"
+                            >
+                                Website
+                            </a>
+                        )
+                    }
+                    <a
+                        href={github}
+                        target="_blank"
+                        class="border border-black px-4 py-2 transition-colors ease-in hover:bg-teal-700 hover:text-white"
+                        >Github</a
+                    >
+                </div>
             </div>
-            <h2 class="text-lg font-semibold">About</h2>
-            <p class="py-4">{about}</p>
+
+            <div>
+                <h2 class="mb-4 text-lg font-semibold">About</h2>
+                <p class="indent-5">{about}</p>
+            </div>
         </div>
     </div>
+    <Footer />
 </Layout>

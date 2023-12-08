@@ -2,13 +2,15 @@
 import Icon from "../components/Icon.jsx";
 ---
 
-<section id="technologies" class="py-4">
-    <h2 class="text-4xl font-semibold text-center">Technologies</h2>
-    <div>
-        <h3 class="text-xl py-4">Languages Proficiency</h3>
-        <div class="ms-10">
+<section id="technologies" class="mb-10">
+    <h2 class="mb-8 text-center text-4xl font-bold">Technologies</h2>
+    <div class="mb-12">
+        <h3 class="mb-4 text-center text-xl font-semibold">
+            Languages Proficiency
+        </h3>
+        <div class="">
             <h4 class="mb-4 border-b border-b-black">Primary</h4>
-            <div class="mb-4 flex flex-wrap gap-10">
+            <div class="mb-6 flex flex-wrap gap-8">
                 <!-- javascript, typescript, html, css, sass -->
                 <Icon title="javascript" />
                 <Icon title="typescript" />
@@ -17,7 +19,7 @@ import Icon from "../components/Icon.jsx";
                 <Icon title="sass" />
             </div>
             <h4 class="mb-4 border-b border-b-black">Secondary</h4>
-            <div class="mb-4 flex flex-wrap gap-10">
+            <div class="mb-6 flex flex-wrap gap-10">
                 <!-- python, sql, c#, lua -->
                 <Icon title="python" />
                 <Icon title="sql" />
@@ -33,38 +35,48 @@ import Icon from "../components/Icon.jsx";
             </div>
         </div>
     </div>
-    <div>
-        <h3 class="text-xl py-4">Frameworks / DBs / Libraries / Etc.</h3>
-        <div class="ms-10">
+
+    <div class="mb-12">
+        <h3 class="mb-4 text-center text-xl font-semibold">
+            Frameworks - Libraries - Etc.
+        </h3>
+        <div class="">
             <h4 class="mb-4 border-b border-b-black">DevOps</h4>
-            <div class="mb-4 flex flex-wrap gap-10">
+            <div class="mb-6 flex flex-wrap gap-10">
                 <!-- nginx, docker -->
-                <Icon title="nginx" />
+                <Icon title="git" />
                 <Icon title="docker" />
             </div>
             <h4 class="mb-4 border-b border-b-black">Frontend</h4>
-            <div class="mb-4 flex flex-wrap gap-10">
+            <div class="mb-6 flex flex-wrap gap-10">
                 <!-- react, nextjs, vite, webpack -->
                 <Icon title="react" />
                 <Icon title="nextjs" />
                 <Icon title="vite" />
                 <Icon title="astro" />
                 <Icon title="webpack" />
+                <Icon title="bootstrap" />
+                <Icon title="tailwind" />
             </div>
             <h4 class="mb-4 border-b border-b-black">Backend</h4>
-            <div class="mb-4 flex flex-wrap gap-10">
+            <div class="mb-6 flex flex-wrap gap-10">
                 <!-- nodejs, express, postgres, redis, drizzle, firebase -->
                 <Icon title="nodejs" />
                 <Icon title="express" />
                 <Icon title="postgres" />
                 <Icon title="redis" />
                 <Icon title="firebase" />
+                <Icon title="nginx" />
+                <Icon title="stripe" />
             </div>
         </div>
     </div>
-    <div>
-        <h3 class="text-xl py-4 mb-2">Development Environment</h3>
-        <div class="ms-10 mb-8 flex flex-wrap gap-10">
+
+    <div class="flex flex-col items-center">
+        <h3 class="mb-6 text-center text-xl font-semibold">
+            Development Environment
+        </h3>
+        <div class="mb-8 flex flex-wrap items-center justify-center gap-10">
             <!-- neovim, arch, i3, tmux, bash -->
             <Icon title="neovim" />
             <Icon title="arch" />
@@ -72,11 +84,13 @@ import Icon from "../components/Icon.jsx";
             <Icon title="tmux" />
             <Icon title="bash" />
         </div>
-        <a
-            href="https://github.com/cretlo/.dotfiles"
-            target="_blank"
-            class="ms-10 px-4 py-2 border border-black hover:bg-slate-500 hover:text-white transition ease-in"
-            >Checkout The Dotfiles</a
-        >
+        <div>
+            <a
+                href="https://github.com/cretlo/.dotfiles"
+                target="_blank"
+                class="inline-block border border-black px-4 py-2 transition ease-in hover:bg-teal-700 hover:text-white"
+                >Checkout The Dotfiles</a
+            >
+        </div>
     </div>
 </section>
