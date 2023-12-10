@@ -2,10 +2,7 @@
 import { TbMenu2 } from "react-icons/tb";
 ---
 
-<nav
-    id="#"
-    class="mx-auto mb-8 flex max-w-2xl items-center justify-between border-b border-b-black px-2 py-5"
->
+<nav id="#" class="mx-auto mb-8 flex max-w-2xl items-center justify-between border-b border-b-black px-2 py-5">
     <a href="/" class="z-50">
         <!--
         <Picture src={Logo} alt="Ian Reimers logo" />
@@ -16,15 +13,11 @@ import { TbMenu2 } from "react-icons/tb";
             version="1.1"
             id="svg1"
             xmlns="http://www.w3.org/2000/svg"
+            <defs
+            id="defs1"
         >
-            <defs id="defs1">
-                <rect
-                    x="322.2261"
-                    y="223.04205"
-                    width="53.213886"
-                    height="60.823296"
-                    id="rect12"></rect>
-            </defs>
+            <title>Ian Reimers logo</title>
+            <rect x="322.2261" y="223.04205" width="53.213886" height="60.823296" id="rect12"></rect>
             <g id="layer1" transform="translate(-71.184717,-55.007323)">
                 <rect
                     style="fill:#64748b;fill-opacity:1;stroke-width:0.264583"
@@ -41,8 +34,7 @@ import { TbMenu2 } from "react-icons/tb";
                     height="19.897991"
                     x="119.82546"
                     y="-1.36631"
-                    transform="matrix(0.8690459,0.49473146,-0.50295052,0.8643152,0,0)"
-                ></rect>
+                    transform="matrix(0.8690459,0.49473146,-0.50295052,0.8643152,0,0)"></rect>
                 <rect
                     style="fill:#64748b;fill-opacity:1;stroke-width:0.264583"
                     id="rect11-7"
@@ -50,8 +42,7 @@ import { TbMenu2 } from "react-icons/tb";
                     height="16.839682"
                     x="3.0330353"
                     y="-114.48527"
-                    transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"
-                ></rect>
+                    transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)"></rect>
                 <rect
                     style="fill:#64748b;fill-opacity:1;stroke-width:0.264583"
                     id="rect11-9"
@@ -59,8 +50,7 @@ import { TbMenu2 } from "react-icons/tb";
                     height="16.839682"
                     x="-38.055717"
                     y="115.84782"
-                    transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,0,0)"
-                ></rect>
+                    transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,0,0)"></rect>
                 <rect
                     style="fill:#64748b;fill-opacity:1;stroke-width:0.264583"
                     id="rect11-7-4"
@@ -85,15 +75,16 @@ import { TbMenu2 } from "react-icons/tb";
         </svg>
     </a>
 
-    <button type="button" class="z-50 sm:hidden" id="menu-button">
-        <TbMenu2 size={40} />
-    </button>
-
     <div class="hidden gap-12 sm:flex">
         <a href="/#">Home</a>
         <a href="/#projects">Projects</a>
         <a href="/#technologies">Technologies</a>
     </div>
+
+    <!-- Mobile menu button -->
+    <button type="button" class="z-50 sm:hidden" id="menu-button">
+        <TbMenu2 size={40} title="Mobile menu button" />
+    </button>
 
     <!-- Mobile menu -->
     <div
@@ -103,36 +94,39 @@ import { TbMenu2 } from "react-icons/tb";
         <div class="flex w-full flex-col gap-y-20 px-2 text-center">
             <a id="mobile-link" href="/#" class="py-4">Home</a>
             <a id="mobile-link" href="/#projects" class="py-4">Projects</a>
-            <a id="mobile-link" href="/#technologies" class="py-4"
-                >Technologies</a
-            >
+            <a id="mobile-link" href="/#technologies" class="py-4">Technologies</a>
         </div>
     </div>
-</nav>
-<script>
-    document.addEventListener("astro:page-load", () => {
-        const menuButton = document.getElementById("menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const mobileLinks = document.querySelectorAll("#mobile-link");
-        let eventsAdded = 0;
 
-        function toggleMenu() {
-            if (mobileMenu?.classList.contains("hidden")) {
-                mobileMenu?.classList.remove("hidden");
-            } else {
-                mobileMenu?.classList.add("hidden");
+    <script>
+        /*
+            Since Astro view transisitons are used, navigating to a new link removes the event listeners.
+            Wrapping the mobile menu logic in the view transitions event resolved this issue.
+        */
+        document.addEventListener("astro:page-load", () => {
+            const menuButton = document.getElementById("menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const mobileLinks = document.querySelectorAll("#mobile-link");
+            let eventsAdded = 0;
+
+            function toggleMenu() {
+                if (mobileMenu?.classList.contains("hidden")) {
+                    mobileMenu?.classList.remove("hidden");
+                } else {
+                    mobileMenu?.classList.add("hidden");
+                }
             }
-        }
 
-        if (eventsAdded === 0) {
-            console.log("Adding click event");
-            mobileLinks.forEach((link) => {
-                link.addEventListener("click", toggleMenu);
-            });
+            if (eventsAdded === 0) {
+                console.log("Adding click event");
+                mobileLinks.forEach((link) => {
+                    link.addEventListener("click", toggleMenu);
+                });
 
-            menuButton?.addEventListener("click", toggleMenu);
-        } else {
-            console.log("click event already added");
-        }
-    });
-</script>
+                menuButton?.addEventListener("click", toggleMenu);
+            } else {
+                console.log("click event already added");
+            }
+        });
+    </script>
+</nav>
