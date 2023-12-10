@@ -79,8 +79,12 @@ const iconMap = {
     downArrow: TbArrowBadgeDown,
 };
 
-export default function Icon({ title, size = 48 }) {
+export default function Icon({
+    title,
+    size = 48,
+    className = "fill-slate-500 hover:fill-teal-700",
+}) {
     const IconComponent = iconMap[title];
 
-    return <IconComponent title={title} size={size} className="fill-slate-500 hover:fill-teal-700" />;
+    return <IconComponent title={title} size={size} className={className} />;
 }
