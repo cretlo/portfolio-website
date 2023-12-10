@@ -37,6 +37,7 @@ import {
 
 import { PiFileSqlFill } from "react-icons/pi";
 import { DiJava } from "react-icons/di";
+import { TbArrowBadgeDown } from "react-icons/tb";
 
 const iconMap = {
     javascript: SiJavascript,
@@ -75,16 +76,11 @@ const iconMap = {
     blender: SiBlender,
     github: SiGithub,
     git: SiGit,
+    downArrow: TbArrowBadgeDown,
 };
 
 export default function Icon({ title, size = 48 }) {
     const IconComponent = iconMap[title];
 
-    return (
-        <IconComponent
-            title={title}
-            size={size}
-            className="fill-slate-500 hover:fill-teal-700"
-        />
-    );
+    return <IconComponent title={title} size={size} className="fill-slate-500 hover:fill-teal-700" />;
 }
