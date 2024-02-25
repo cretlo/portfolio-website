@@ -13,32 +13,33 @@ const { title, desc, technologies, about, imgData, link, github } = Astro.props;
 ---
 
 <Layout title={title}>
-    <div>
-        <div class="mb-8">
+    <div class="mx-auto max-w-screen-lg md:px-2">
+        <div class="mb-12">
             <a
                 class="border border-black px-4 py-2 transition-colors ease-in hover:bg-teal-700 hover:text-white"
                 href="/#projects"
                 transition:name="#projects">← Back to Projects</a
             >
         </div>
-        <h1 transition:name="title" class="mb-4 text-2xl font-bold">
+        <h1 transition:name="title" class="mb-8 text-3xl font-bold">
             {title}
         </h1>
         <Image
             transition:name="image"
+            densities={[1.5, 2]}
             src={imgData}
             alt={desc}
             class="mb-4 border border-black"
         />
         <div>
-            <div class="mb-6">
+            <div class="mb-8">
                 <h2 class="mb-4 text-lg font-semibold">Technologies</h2>
                 <div class="flex flex-wrap gap-x-6 gap-y-2">
                     {technologies.map((tech) => <Icon title={tech} />)}
                 </div>
             </div>
 
-            <div class="mb-8">
+            <div class="mb-10">
                 <h2 class="mb-4 text-lg font-semibold">Links</h2>
                 <div>
                     {
