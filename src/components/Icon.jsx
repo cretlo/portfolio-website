@@ -33,6 +33,7 @@ import {
     SiBlender,
     SiGithub,
     SiGit,
+    SiSpringboot,
 } from "react-icons/si";
 
 import { PiFileSqlFill } from "react-icons/pi";
@@ -77,6 +78,7 @@ const iconMap = {
     github: SiGithub,
     git: SiGit,
     downArrow: TbArrowBadgeDown,
+    springboot: SiSpringboot
 };
 
 export default function Icon({

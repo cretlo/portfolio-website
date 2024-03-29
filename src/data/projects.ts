@@ -2,8 +2,23 @@ import charlestonalImgData from "@assets/charlestonal.png";
 import momclubImgData from "@assets/momclub.png";
 import plannerImgData from "@assets/planner.png";
 import vrImgData from "@assets/vr_destruction.png";
+import pomodoroImgData from "@assets/pomodoro.png";
 
 export default [
+    {
+        params: {
+            project: "pomodoro-tracker",
+        },
+        props: {
+            title: "Pomodoro Tracker",
+            imgData: pomodoroImgData,
+            desc: "Screenshot of Pomodoro Tracker timer and dashboard analytics.",
+            technologies: ["nextjs", "react", "tailwind", "java", "springboot", "postgres"],
+            about: `Implementing the concept of the Pomodoro Technique, the fullstack application can be used as a timer for your task and break sessions. With an account made, and logged in, the app tracks your task, short break, and long break times to provide you with analytics of your pomodoro sessions, located in your personal dashboard. The session timer is completely configurable through the settings tab for logged in and non-logged in usage, and provides a list of timer sounds when completing/transitioning into a new session.`,
+            link: "",
+            github: "https://github.com/cretlo/unity-vr-rampage/blob/main/notebook/final.md",
+        },
+    },
     {
         params: {
             project: "fullstack-planner-app",
