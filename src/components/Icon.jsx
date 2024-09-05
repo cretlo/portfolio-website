@@ -89,10 +89,6 @@ export default function Icon({
     title,
     size = 58,
     className = "fill-slate-500",
-}: {
-    title: string;
-    size: number | undefined;
-    className: string | undefined;
 }) {
     const IconComponent = iconMap[title];
 
